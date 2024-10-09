@@ -11,23 +11,7 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) throws IOException {
-
-
-    test person1 = new test("John Doe", 16);
-    System.out.println(person1);
-
-    person1.setAge(20);
-    System.out.println("After modification: " + person1);
-
-    System.out.println("Name: " + person1.getName());
-    System.out.println("Age: " + person1.getAge());
-    System.out.println("Is Minor: " + person1.isMinor());
-  }
-}
-
-
-
-    /*ObjectMapper mapper = new ObjectMapper();
+    ObjectMapper mapper = new ObjectMapper();
     File inputFile = new File("src/main/resources/test-input.json");
     JsonNode data = mapper.readTree(inputFile).get("data");
 
@@ -72,4 +56,3 @@ record Universe(
     String name,
     List<JsonNode> individuals
 ) { }
-*/

@@ -1,5 +1,7 @@
 package oop.practice;
 
+import java.io.IOException;
+
 public class test {
     private String name;
     private int age;
@@ -40,4 +42,20 @@ public class test {
                 ", minor=" + minor +
                 '}';
     }
-}
+
+
+        public static void main(String[] args) throws IOException {
+
+
+            test person1 = new test("John Doe", 16);
+            System.out.println(person1);
+
+            person1.setAge(20);
+            System.out.println("After modification: " + person1);
+
+            System.out.println("Name: " + person1.getName());
+            System.out.println("Age: " + person1.getAge());
+            System.out.println("Is Minor: " + person1.isMinor());
+        }
+    }
+
