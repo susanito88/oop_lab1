@@ -1,54 +1,58 @@
 package oop.practice;
 
+import java.util.List;
+
 public class Person {
-    private String name;
     private int id;
+    private Boolean isHumanoid;
+    private String planet;
     private int age;
-    private Boolean minor;
+    private List<String> traits;
 
     // Constructor
-    public Person(String name, int id, int age) {
-        this.name = name;
+    public Person(int id, Boolean isHumanoid, String planet, int age, List<String> traits) {
         this.id = id;
+        this.isHumanoid = isHumanoid;
+        this.planet = planet;
         this.age = age;
-        this.minor = age < 18;
+        this.traits = traits;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    // Getters
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Boolean getIsHumanoid() {
+        return isHumanoid;
+    }
+
+    public String getPlanet() {
+        return planet;
     }
 
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-        this.minor = age < 18;
+    public List<String> getTraits() {
+        return traits;
     }
 
-    public Boolean isMinor() {
-        return minor;
+    // Method to check if the person has a specific trait
+    public boolean hasTrait(String trait) {
+        return traits.contains(trait);
     }
 
+    @Override
     public String toString() {
         return "Person{" +
-                "name='" + name + '\'' +
-                ", id=" + id +
+                "id=" + id +
+                ", isHumanoid=" + isHumanoid +
+                ", planet='" + planet + '\'' +
                 ", age=" + age +
-                ", minor=" + minor +
+                ", traits=" + traits +
                 '}';
     }
+
 }
