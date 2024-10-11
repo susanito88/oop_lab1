@@ -1,15 +1,15 @@
 package oop.practice;
 
-import java.io.IOException;
-
-public class test {
+public class Person {
     private String name;
+    private int id;
     private int age;
     private Boolean minor;
 
     // Constructor
-    public test(String name, int age) {
+    public Person(String name, int id, int age) {
         this.name = name;
+        this.id = id;
         this.age = age;
         this.minor = age < 18;
     }
@@ -20,6 +20,14 @@ public class test {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getAge() {
@@ -36,26 +44,11 @@ public class test {
     }
 
     public String toString() {
-        return "Test{" +
+        return "Person{" +
                 "name='" + name + '\'' +
+                ", id=" + id +
                 ", age=" + age +
                 ", minor=" + minor +
                 '}';
     }
-
-
-        public static void main(String[] args) throws IOException {
-
-
-            test person1 = new test("John Doe", 16);
-            System.out.println(person1);
-
-            person1.setAge(20);
-            System.out.println("After modification: " + person1);
-
-            System.out.println("Name: " + person1.getName());
-            System.out.println("Age: " + person1.getAge());
-            System.out.println("Is Minor: " + person1.isMinor());
-        }
-    }
-
+}

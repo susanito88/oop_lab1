@@ -11,48 +11,44 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) throws IOException {
+    //read file
     ObjectMapper mapper = new ObjectMapper();
     File inputFile = new File("src/main/resources/test-input.json");
     JsonNode data = mapper.readTree(inputFile).get("data");
 
-    Universe starWars = new Universe("starWars", new ArrayList<>());
-    Universe hitchhikers = new Universe("hitchHiker", new ArrayList<>());
-    Universe marvel = new Universe("marvel", new ArrayList<>());
-    Universe rings = new Universe("rings", new ArrayList<>());
-
+    List<Person> people = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 
+    //json to classes
     for (JsonNode entry : data) {
-      String entryAsString = entry.toString();
-      System.out.println(entryAsString);
+      String name = entry.has("name") ? entry.get("name").asText() : "Unknown";
+      int id = entry.has("id") ? entry.get("id").asInt() : 0;
+      int age = entry.has("age") ? entry.get("age").asInt() : 0;  // Default age 0
+
+      Person person = new Person(name, id, age);
+      people.add(person);
+
+      System.out.println(person);
+      System.out.println("Assign to Universe: 1 - StarWars, 2 - Hitchhiker, 3 - Marvel, 4 - Rings");
       String userInput = scanner.nextLine();
+
       switch (userInput) {
         case "1":
-          starWars.individuals().add(entry);
           break;
         case "2":
-          hitchhikers.individuals().add(entry);
           break;
         case "3":
-          marvel.individuals().add(entry);
           break;
         case "4":
-          rings.individuals().add(entry);
           break;
         default:
-          System.out.println("Invalid input");
+          System.out.println("Invalid input, skipping...");
       }
     }
 
     scanner.close();
-    mapper.writeValue(new File("src/main/resources/output/starwars.json"), starWars);
-    mapper.writeValue(new File("src/main/resources/output/hitchhiker.json"), hitchhikers);
-    mapper.writeValue(new File("src/main/resources/output/rings.json"), rings);
-    mapper.writeValue(new File("src/main/resources/output/marvel.json"), marvel);
+
+    System.out.println("People with even IDs:");
+    people.stream().filter(p -> p.getId() % 2 == 0).forEach(System.out::println);
   }
 }
-
-record Universe(
-    String name,
-    List<JsonNode> individuals
-) { }
