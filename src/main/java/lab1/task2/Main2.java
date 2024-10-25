@@ -1,6 +1,6 @@
 package lab1.task2;
 
-public class Main {
+public class Main2 {
     public static void main(String[] args) {
         // Check if a file path is provided as a command-line argument
         if (args.length < 1) {

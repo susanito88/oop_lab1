@@ -39,4 +39,8 @@ public class Display {
         compareSize(m);
         compareSharpness(m);
     }
+
+    public String toString() {
+        return model;  // Return the model name when a Display object is printed
+    }
 }
