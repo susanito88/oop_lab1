@@ -8,7 +8,6 @@ public class TextData {
     private int numberOfSentences;
     private String longestWord;
 
-    // Constructor that accepts a String and initializes the text and calculates statistics
     public TextData(String text) {
         this.text = text;
         this.numberOfVowels = getNumberOfVowels();
@@ -73,7 +72,6 @@ public class TextData {
         return longestWord;
     }
 
-    // Getters for statistics
     public int getNumberOfVowelsResult() {
         return numberOfVowels;
     }
