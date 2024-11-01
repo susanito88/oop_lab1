@@ -1,4 +1,3 @@
-// Coffee.java
 package lab2.Task1;
 
 
@@ -17,4 +16,6 @@ public class Coffee {
     public String getName() {
         return name;
     }
+
+
 }

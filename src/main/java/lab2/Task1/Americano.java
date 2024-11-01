@@ -1,4 +1,3 @@
-// Americano.java
 package lab2.Task1;
 
 public class Americano extends Coffee {
@@ -12,4 +11,5 @@ public class Americano extends Coffee {
     public int getMlOfWater() {
         return mlOfWater;
     }
+
 }
