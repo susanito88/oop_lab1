@@ -11,4 +11,9 @@ public class SyrupCappuccino extends lab2.Task1.Cappuccino {
     public SyrupType getSyrup() {
         return syrup;
     }
+
+    public void printCoffeeDetails() {
+        super.printCoffeeDetails();
+        System.out.println("Syrup Type: " + syrup);
+    }
 }

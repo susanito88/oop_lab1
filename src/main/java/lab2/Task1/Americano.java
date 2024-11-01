@@ -12,4 +12,9 @@ public class Americano extends Coffee {
     public int getMlOfWater() {
         return mlOfWater;
     }
+
+    public void printCoffeeDetails() {
+        super.printCoffeeDetails();
+        System.out.println("Water (ml): " + mlOfWater);
+    }
 }

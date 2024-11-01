@@ -11,4 +11,9 @@ public class PumpkinSpiceLatte extends Cappuccino {
     public int getMgOfPumpkinSpice() {
         return mgOfPumpkinSpice;
     }
+
+    public void printCoffeeDetails() {
+        super.printCoffeeDetails();
+        System.out.println("Pumpkin Spice (mg): " + mgOfPumpkinSpice);
+    }
 }

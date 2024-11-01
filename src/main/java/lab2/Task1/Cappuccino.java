@@ -12,4 +12,9 @@ public class Cappuccino extends lab2.Task1.Coffee {
     public int getMlOfMilk() {
         return mlOfMilk;
     }
+
+    public void printCoffeeDetails() {
+        super.printCoffeeDetails();
+        System.out.println("Milk (ml): " + mlOfMilk);
+    }
 }
