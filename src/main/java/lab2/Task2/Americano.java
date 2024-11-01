@@ -1,4 +1,5 @@
-package lab2.Task1;
+// Americano.java
+package lab2.Task2;
 
 public class Americano extends Coffee {
     private final int mlOfWater;
@@ -12,4 +13,8 @@ public class Americano extends Coffee {
         return mlOfWater;
     }
 
+    public void printCoffeeDetails() {
+        super.printCoffeeDetails();
+        System.out.println("Water (ml): " + mlOfWater);
+    }
 }

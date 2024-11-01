@@ -1,4 +1,4 @@
-package lab2.Task1;
+package lab2.Task2;
 
 
 public class Cappuccino extends lab2.Task2.Coffee {
@@ -13,5 +13,8 @@ public class Cappuccino extends lab2.Task2.Coffee {
         return mlOfMilk;
     }
 
-
+    public void printCoffeeDetails() {
+        super.printCoffeeDetails();
+        System.out.println("Milk (ml): " + mlOfMilk);
+    }
 }

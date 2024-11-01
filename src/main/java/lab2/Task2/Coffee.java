@@ -1,4 +1,5 @@
-package lab2.Task1;
+// Coffee.java
+package lab2.Task2;
 
 
 public class Coffee {
@@ -17,5 +18,8 @@ public class Coffee {
         return name;
     }
 
-
+    public void printCoffeeDetails() {
+        System.out.println("Coffee Name: " + name);
+        System.out.println("Intensity: " + coffeeIntensity);
+    }
 }

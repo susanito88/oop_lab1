@@ -1,4 +1,4 @@
-package lab2.Task1;
+package lab2.Task2;
 
 public class SyrupCappuccino extends lab2.Task2.Cappuccino {
     private final SyrupType syrup;
@@ -12,5 +12,8 @@ public class SyrupCappuccino extends lab2.Task2.Cappuccino {
         return syrup;
     }
 
-
+    public void printCoffeeDetails() {
+        super.printCoffeeDetails();
+        System.out.println("Syrup Type: " + syrup);
+    }
 }
