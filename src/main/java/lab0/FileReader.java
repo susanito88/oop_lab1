@@ -1,4 +1,4 @@
-package oop.practice;
+package lab0;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

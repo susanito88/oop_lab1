@@ -1,4 +1,4 @@
-package oop.practice;
+package lab0;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,7 +20,7 @@ public class Main {
     Universe marvel = new Universe("Marvel", new ArrayList<>());
     Universe rings = new Universe("Rings", new ArrayList<>());
 
-    int idCounter = 0; // Starts with 0 as per provided data
+    int idCounter = 0;
 
     for (JsonNode entry : data) {
       classifyEntry(entry, starWars, hitchhikers, marvel, rings, idCounter);
@@ -31,7 +31,7 @@ public class Main {
 
     File outputDir = new File("src/main/resources/output");
     if (!outputDir.exists()) {
-      outputDir.mkdirs(); // Create the directory if it doesn't exist
+      outputDir.mkdirs();
     }
 
     View view = new View();
@@ -45,25 +45,23 @@ public class Main {
     boolean isHuman = entry.has("isHumanoid") && entry.get("isHumanoid").asBoolean();
     String planet = entry.has("planet") ? entry.get("planet").asText() : null;
     Integer age = entry.has("age") ? entry.get("age").asInt() : null;
-    HashSet<String> traitsSet = new HashSet<>(); // Use a HashSet to avoid duplicates
+    HashSet<String> traitsSet = new HashSet<>();
 
     if (entry.has("traits")) {
       for (JsonNode trait : entry.get("traits")) {
         String traitStr = trait.asText();
-        traitsSet.add(traitStr); // Add to HashSet for uniqueness
+        traitsSet.add(traitStr); // H
       }
     }
-    List<String> traits = new ArrayList<>(traitsSet); // Convert back to List
+    List<String> traits = new ArrayList<>(traitsSet); 
 
     Person person = new Person(id, isHuman, planet, age != null ? age : 0, traits);
 
 
-    String classification = classifyPerson(person, starWars, hitchhikers, marvel, rings);
+    classifyPerson(person, starWars, hitchhikers, marvel, rings);
   }
 
-  private static String classifyPerson(Person person, Universe starWars, Universe hitchhikers, Universe marvel, Universe rings) {
-    String classification = null;
-
+  private static void classifyPerson(Person person, Universe starWars, Universe hitchhikers, Universe marvel, Universe rings) {
     if ("Earth".equalsIgnoreCase(person.getPlanet())) {
       if (person.getIsHumanoid() && person.hasTrait("BLONDE") && person.hasTrait("POINTY_EARS")) {
         rings.individuals().add(person);
@@ -77,6 +75,7 @@ public class Main {
         rings.individuals().add(person);
       }
     }
+
     else if (!person.getIsHumanoid() && "Kashyyyk".equalsIgnoreCase(person.getPlanet())) {
       starWars.individuals().add(person);
     } else if (!person.getIsHumanoid() && "Endor".equalsIgnoreCase(person.getPlanet())) {
@@ -108,7 +107,6 @@ public class Main {
     else if (person.getIsHumanoid() && person.getAge() > 1000) {
       rings.individuals().add(person);
     }
-    return classification;
   }
 
   private static void printResults(Universe universe) {
