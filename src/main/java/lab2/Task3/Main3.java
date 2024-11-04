@@ -5,7 +5,7 @@ import lab2.Task1.Intensity;
 import lab2.Task1.SyrupType;
 
 
-public class Main {
+public class Main3 {
     public static void main(String[] args) {
         Americano americano = new Americano(Intensity.NORMAL, 150);
         americano.makeAmericano();
