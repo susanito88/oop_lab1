@@ -8,10 +8,12 @@ public class Coffee {
     protected final String name = "Coffee";
 
     public Coffee(Intensity intensity) {
+
         this.coffeeIntensity = intensity;
     }
 
     public Intensity getIntensity() {
+
         return coffeeIntensity;
     }
 
@@ -20,6 +22,7 @@ public class Coffee {
     }
 
     public void printCoffeeDetails() {
+
         System.out.println("Coffee intensity: " + coffeeIntensity);
     }
 }

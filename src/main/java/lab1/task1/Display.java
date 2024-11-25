@@ -41,6 +41,6 @@ public class Display {
     }
 
     public String toString() {
-        return model;  // Return the model name when a Display object is printed
+        return model;
     }
 }

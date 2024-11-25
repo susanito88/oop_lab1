@@ -2,7 +2,6 @@ package lab2.Task4;
 
 
 import lab2.Task1.Intensity;
-import lab2.Task2.Coffee;
 
 public class Cappuccino extends Coffee {
     private final int mlOfMilk;
@@ -23,6 +22,7 @@ public class Cappuccino extends Coffee {
         return mlOfMilk;
     }
     public String getName() {
+
         return name;
     }
 

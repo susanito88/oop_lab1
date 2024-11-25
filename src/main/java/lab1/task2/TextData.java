@@ -30,13 +30,16 @@ public class TextData {
 
     public int getNumberOfConsonants() {
         int count = 0;
+        String consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
+
         for (char ch : text.toCharArray()) {
-            if (Character.isLetter(ch) && "aeiouAEIOU".indexOf(ch) == -1) {
+            if (consonants.indexOf(ch) != -1) {
                 count++;
             }
         }
         return count;
     }
+
 
     public int getNumberOfLetters() {
         int count = 0;

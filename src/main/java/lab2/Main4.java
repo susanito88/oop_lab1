@@ -1,4 +1,6 @@
-package lab2.Task4;
+package lab2;
+
+import lab2.Task4.Barista;
 
 import java.util.Arrays;
 
