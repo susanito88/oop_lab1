@@ -1,4 +1,4 @@
-package lab3;
+package lab3.task1;
 
 public class LinkedQueue<T> implements Queue<T> {
     private static class Node<T> {

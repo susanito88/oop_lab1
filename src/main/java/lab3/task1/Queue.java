@@ -1,4 +1,4 @@
-package lab3;
+package lab3.task1;
 
 public interface Queue<T> {
     void enqueue(T item);
