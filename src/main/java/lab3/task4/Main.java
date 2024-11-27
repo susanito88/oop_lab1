@@ -8,10 +8,10 @@ public class Main {
     public static void main(String[] args) {
         Semaphore semaphore = new Semaphore();
         // Simulate cars arriving
-        Car car1 = new Car("ELECTRIC", "PEOPLE", false);
-        Car car2 = new Car("GAS", "PEOPLE", true);
-        Car car3 = new Car("GAS", "ROBOTS", true);
-        Car car4 = new Car("ELECTRIC", "ROBOTS", true);
+        Car car1 = new Car(1, "ELECTRIC", "PEOPLE", false, 10);
+        Car car2 = new Car(2, "GAS", "PEOPLE", true, 15);
+        Car car3 = new Car(3, "GAS", "ROBOTS", true, 20);
+        Car car4 = new Car(4, "ELECTRIC", "ROBOTS", true, 5);
         System.out.println("Processing cars...");
         semaphore.routeCar(car1);
         semaphore.routeCar(car2);
