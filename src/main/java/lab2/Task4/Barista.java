@@ -2,10 +2,12 @@ package lab2.Task4;
 
 import lab2.Task1.Intensity;
 import lab2.Task1.SyrupType;
-
 import java.util.List;
 
+
+
 public class Barista {
+
     public void makeCoffee(List<String> coffeeOrders) {
         for (String order : coffeeOrders) {
             switch (order) {
