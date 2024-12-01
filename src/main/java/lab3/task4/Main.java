@@ -17,8 +17,8 @@ public class Main {
         semaphore.routeCar(car2);
         semaphore.routeCar(car3);
         semaphore.routeCar(car4);
-        System.out.println("\nDisplaying queues:");
-        semaphore.displayAllQueues();
+//        System.out.println("\nDisplaying queues:");
+//        semaphore.displayAllQueues();
         System.out.println("\nServing all cars...");
         semaphore.serveAllCars();
         System.out.println("\nFinal Stats:");

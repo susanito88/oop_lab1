@@ -6,6 +6,8 @@ import lab3.task3.Car;
 import lab3.task3.CarStation;
 import java.util.HashMap;
 import java.util.Map;
+
+
 public class Semaphore {
     private final Queue<Car> gasStationQueue = new LinkedQueue<>(10);
     private final Queue<Car> electricStationQueue = new LinkedQueue<>(10);
